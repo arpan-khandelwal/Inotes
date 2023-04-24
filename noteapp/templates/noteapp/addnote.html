@@ -1,0 +1,17 @@
+{% extends '../base/base.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+<div class="add-modal" id="add-modal">
+    <div class="form">
+        <form action="" method="post">
+            {% csrf_token %}
+            <h3>Add Note</h3>
+            {{form | crispy}}
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-danger close-btn" onclick="closeModal('add-modal')">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock body %}
